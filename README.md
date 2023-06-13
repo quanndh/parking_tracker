@@ -54,4 +54,4 @@ Another job will also be executed to first time fetching available car parking, 
 
 The second job is also scheduled to execute every minute to update newest data.
 
-All parking lots data are stored to Redis because they only update 1 per minute but can be read a lot. Geometry search is also make use of Redis geometry apis. With these design, it makes the searching fast and scalable.
+All parking lots data are stored to Redis with the parking_code as key (this field is indexed) because they only update 1 per minute but can be read a lot. Geometry search was done by using Redis geometry apis. With these design, it makes the searching fast and scalable.
